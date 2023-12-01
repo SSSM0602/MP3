@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Prediction App</title>
+    <style>
+        .model-description {
+            width: 45%;
+            float: left;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h1>Object Prediction App</h1>
+    <div class="model-description">
+        <h2>Vision Transformer (ViT)</h2>
+        <p>A vision transformer (ViT) is a neural network used to classify images and perform other vision tasks.
+            It applies a transformer architecture which originally was used for natural language processing.
+        </p>
+    </div>
+
+    <div class="model-description">
+        <h2>YOLO Model</h2>
+        <p>YOLO (You Only Look Once) is a pre-trained vision model that is used for object detection and image classification. 
+            It uses a CNN to produce thresholds based on the model's confidence.
+        </p>
+    </div>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <label for="model">Choose a model:</label>
+        <select name="model" id="model">
+            <option value="vit">Vision Transformer (ViT)</option>
+            <option value="yolo">YOLO Model</option>
+        </select>
+        <br>
+        <input type="file" name="file" accept="image/*" required>
+        <br>
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
